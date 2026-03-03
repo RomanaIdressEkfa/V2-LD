@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 14, 2026 at 08:08 AM
+-- Generation Time: Mar 03, 2026 at 06:30 AM
 -- Server version: 5.7.39
 -- PHP Version: 8.3.29
 
@@ -36,47 +36,27 @@ CREATE TABLE `arguments` (
   `parent_id` bigint(20) UNSIGNED DEFAULT NULL,
   `reply_type` enum('agree','disagree','neutral') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'neutral',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `attachment_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `attachment_audio` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `attachment_video` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `attachment_doc` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `arguments`
 --
 
-INSERT INTO `arguments` (`id`, `debate_id`, `user_id`, `side`, `body`, `parent_id`, `reply_type`, `created_at`, `updated_at`) VALUES
-(3, 2, 1, 'pro', 'yes', NULL, 'neutral', '2026-02-02 06:02:58', '2026-02-02 06:02:58'),
-(4, 2, 1, 'con', 'no', NULL, 'neutral', '2026-02-02 06:03:06', '2026-02-02 06:03:06'),
-(5, 2, 1, 'pro', 'dfd', NULL, 'neutral', '2026-02-02 06:03:23', '2026-02-02 06:03:23'),
-(6, 2, 1, 'pro', 'sfdgd', NULL, 'neutral', '2026-02-02 06:03:26', '2026-02-02 06:03:26'),
-(7, 2, 1, 'pro', 'fdgdhf', NULL, 'neutral', '2026-02-05 01:00:05', '2026-02-05 01:00:05'),
-(8, 2, 1, 'con', 'fghnfg', NULL, 'neutral', '2026-02-05 01:00:10', '2026-02-05 01:00:10'),
-(9, 2, 1, 'pro', 'dfsdfd', NULL, 'agree', '2026-02-05 04:46:45', '2026-02-05 04:46:45'),
-(10, 2, 1, 'pro', 'dsdfd', NULL, 'agree', '2026-02-05 04:50:59', '2026-02-05 04:50:59'),
-(11, 2, 1, 'pro', 'naa', 10, 'neutral', '2026-02-07 00:34:11', '2026-02-07 00:34:11'),
-(12, 2, 1, 'pro', 'dsdfsf', 11, 'neutral', '2026-02-07 00:35:18', '2026-02-07 00:35:18'),
-(13, 2, 1, 'pro', 'ASDADFSF', 9, 'neutral', '2026-02-07 00:35:41', '2026-02-07 00:35:41'),
-(14, 2, 1, 'pro', 'SDAFDFGDG', NULL, 'neutral', '2026-02-07 00:36:03', '2026-02-07 00:36:03'),
-(15, 2, 1, 'pro', 'fdgfdhfgh', NULL, 'neutral', '2026-02-07 00:54:54', '2026-02-07 00:54:54'),
-(16, 2, 1, 'pro', 'fdghf', 8, 'neutral', '2026-02-07 00:55:27', '2026-02-07 00:55:27'),
-(17, 2, 1, 'pro', 'ghfhfgy', 12, 'neutral', '2026-02-07 01:19:15', '2026-02-07 01:19:15'),
-(18, 2, 1, 'pro', 'hkjojkjhuh', 4, 'neutral', '2026-02-07 02:06:43', '2026-02-07 02:06:43'),
-(19, 2, 1, 'pro', 'Test', NULL, 'neutral', '2026-02-07 02:42:51', '2026-02-07 02:42:51'),
-(20, 2, 1, 'con', 'ertetr', 19, 'neutral', '2026-02-07 02:55:33', '2026-02-07 02:55:33'),
-(21, 2, 1, 'con', 'try', NULL, 'neutral', '2026-02-07 02:57:43', '2026-02-07 02:57:43'),
-(22, 2, 1, 'con', 'jhh', NULL, 'neutral', '2026-02-07 23:21:08', '2026-02-07 23:21:08'),
-(23, 2, 3, 'con', 'Hiii', NULL, 'neutral', '2026-02-08 00:04:34', '2026-02-08 00:04:34'),
-(24, 2, 3, 'pro', 'fhghghgh', 20, 'neutral', '2026-02-08 00:04:55', '2026-02-08 00:04:55'),
-(25, 2, 3, 'pro', 'hfghffg', 22, 'neutral', '2026-02-08 00:09:37', '2026-02-08 00:09:37'),
-(26, 2, 3, 'con', 'I am agreed', NULL, 'neutral', '2026-02-08 02:13:24', '2026-02-08 02:13:24'),
-(27, 2, 4, 'con', 'xcvxv', 26, 'neutral', '2026-02-09 03:57:28', '2026-02-09 03:57:28'),
-(28, 2, 5, 'pro', 'sddgdgdfg', 13, 'neutral', '2026-02-13 22:12:14', '2026-02-13 22:12:14'),
-(29, 2, 5, 'pro', 'dfgfdgfdg', 27, 'neutral', '2026-02-13 22:12:33', '2026-02-13 22:12:33'),
-(30, 2, 5, 'pro', 'fgghfhf', 29, 'neutral', '2026-02-13 22:20:16', '2026-02-13 22:20:16'),
-(31, 2, 5, 'pro', 'test fdgfhfgh', 27, 'neutral', '2026-02-13 22:33:38', '2026-02-13 22:33:38'),
-(32, 2, 5, 'pro', 'x sfddfdf', 30, 'neutral', '2026-02-13 23:06:03', '2026-02-13 23:06:03'),
-(33, 2, 1, 'con', 'test hgjgjghj', 27, 'neutral', '2026-02-14 01:06:22', '2026-02-14 01:06:22'),
-(34, 2, 1, 'pro', '<span class=\"mention-tag\" contenteditable=\"false\">test</span>&nbsp;fgfgfg', 27, 'neutral', '2026-02-14 01:12:39', '2026-02-14 01:12:39'),
-(35, 2, 1, 'pro', '<span class=\"mention-tag\" contenteditable=\"false\">Romana Idress Ekfa</span>&nbsp;Testttt', 26, 'neutral', '2026-02-14 01:12:54', '2026-02-14 01:12:54');
+INSERT INTO `arguments` (`id`, `debate_id`, `user_id`, `side`, `body`, `parent_id`, `reply_type`, `created_at`, `updated_at`, `attachment_image`, `attachment_audio`, `attachment_video`, `attachment_doc`) VALUES
+(39, 2, 1, 'pro', 'Hiiii 1', NULL, 'neutral', '2026-03-02 23:54:59', '2026-03-02 23:54:59', NULL, NULL, NULL, NULL),
+(40, 2, 1, 'pro', 'Hiii 2', NULL, 'neutral', '2026-03-02 23:55:15', '2026-03-02 23:55:15', NULL, NULL, NULL, NULL),
+(41, 2, 1, 'pro', 'ghfhgfhgfjh', 39, 'agree', '2026-03-03 00:06:31', '2026-03-03 00:06:31', NULL, NULL, NULL, NULL),
+(42, 2, 1, 'con', 'dhfghfhgfjhdgdf', NULL, 'neutral', '2026-03-03 00:08:03', '2026-03-03 00:08:03', NULL, NULL, NULL, NULL),
+(43, 2, 1, 'con', '<p>look my video</p>', NULL, 'neutral', '2026-03-03 00:15:32', '2026-03-03 00:15:32', NULL, NULL, NULL, NULL),
+(44, 2, 1, 'pro', '<p>image</p>', NULL, 'neutral', '2026-03-03 00:20:54', '2026-03-03 00:20:54', NULL, NULL, NULL, NULL),
+(45, 2, 1, 'pro', '', 44, 'agree', '2026-03-03 00:21:08', '2026-03-03 00:21:08', NULL, NULL, NULL, NULL),
+(46, 2, 1, 'pro', '', 45, 'agree', '2026-03-03 00:23:47', '2026-03-03 00:23:47', 'uploads/images/g6fwl69L2dVjNSilaJBaGSY3R0lpIeyRg7q5jme2.jpg', NULL, NULL, NULL),
+(47, 2, 1, 'pro', '<p>assdad</p>', 42, 'disagree', '2026-03-03 00:24:54', '2026-03-03 00:24:54', 'uploads/images/NeYwjB94z6Erziz15XFi7GcHsZhPtUaOApJvkDm9.jpg', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -267,8 +247,10 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('69z6CUVwVMDgdNY1GXMjQpDP2ZcxiqfHcTJKvnaC', 5, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoibVNHNmpLUkZtdWRSbnQ2UWtaeEZrMnNmMGNzOVUwbEEyNXk1c3p2cyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjQ6Imh0dHA6Ly9sb2dpYy1kZWJhdGUudGVzdCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NTt9', 1771055470),
-('YApxPjaMUkGVm9nWTlecdP3Vhtr3K7l9xZpNPxj4', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiT2QzTXlDVXhtOGFkWDg5YW5xakRvTTZKMkJIWXJ1U1FpRElYRE9wVyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly9sb2dpYy1kZWJhdGUudGVzdC8/c29ydD1sYXRlc3QiO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6MzoidXJsIjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1771056121);
+('3TQG27WhWxTIC8RyoLjBRbnpoZcFroIkAL5yH95z', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiZVNEYlpGaWJ0QUNCWnJ4ek5jQWJRbzlaZjdBT0Q5Z1FkakNoWXU0SSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjQ6Imh0dHA6Ly9sb2dpYy1kZWJhdGUudGVzdCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1772260143),
+('PZpsn3cQrVWjNyGkkfcnKIVC6TYrJUQtuVr98h8d', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiSHZvR1NLMTUybG1NVkQ0QzFnbVRBRDdDeGt4ZUduRjlhUlp5MEtOaSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2dpYy1kZWJhdGUudGVzdC9sb2dpbiI7czo1OiJyb3V0ZSI7czo1OiJsb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjE6e3M6ODoiaW50ZW5kZWQiO3M6MjU6Imh0dHA6Ly9sb2dpYy1kZWJhdGUudGVzdC8iO319', 1772261509),
+('SzkHIg6bC9zD9dw8VCqfwjixPVmFVoTjcuZleVMt', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiN3d6RXVoSFhrd29DUzN4WmI4ZjVCaW9mM0xwcm1wdnlBSGxDVDY1TSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjQ6Imh0dHA6Ly9sb2dpYy1kZWJhdGUudGVzdCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1772519095),
+('X0D5oiOpfiDNi1w6l16OXFbxyMWdL8KOt6C5GLMN', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieFprVkRIVHBpZkd6YUxpUVNqSjRpSWx2SkxWdkxheXViQVQ0aVljUCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjQ6Imh0dHA6Ly9sb2dpYy1kZWJhdGUudGVzdCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1772515331);
 
 -- --------------------------------------------------------
 
@@ -294,7 +276,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`, `avatar`) VALUES
-(1, 'Logically Debate Admin', 'admin@gmail.com', '2026-02-02 00:06:17', '$2y$12$FEoB0/q7h.DWK3Et6q1mc.GtZ/CpXaNnc.IdbFmTw8PJFySzfn3rG', 'admin', 'ycrU9xylMZLL2jv4jVlnffFMAR6x6MXANyV5Io4onddRVIGpJQADRxjofhH5', '2026-02-02 00:06:18', '2026-02-02 00:06:18', NULL),
+(1, 'Logically Debate Admin', 'admin@gmail.com', '2026-02-02 00:06:17', '$2y$12$FEoB0/q7h.DWK3Et6q1mc.GtZ/CpXaNnc.IdbFmTw8PJFySzfn3rG', 'admin', 'v4RyfcbvRyqnK7ZF8xBQnjRz2IIe0H7slqbXVyfWSnam50qQbgpPiKcVZKHN', '2026-02-02 00:06:18', '2026-02-02 00:06:18', NULL),
 (2, 'Romana Idress Ekfa', 'logicallydebate@gmail.com', NULL, '$2y$12$.YXnYTHRKvuB.zUX5EIrXuesAf88vuKIc.SU6P3UwiTuRFIXhWyB2', 'user', NULL, '2026-02-02 00:07:58', '2026-02-02 00:07:58', NULL),
 (3, 'Romana Idress Ekfa', 'romana-idress-ekfa_1770530600@guest.com', NULL, '$2y$12$mkEI4mKhHsFo4EFPfson8OBgJrUr6ooYqtOvjOAP20mWrwjRAb/D2', 'user', 'IzfIuvrnbeErcXi6KCh42UpBsSeY97lEyU82oMqOfX14gQcmndpbH7EadhCS', '2026-02-08 00:03:21', '2026-02-08 00:03:21', 'avatars/NLfz57GjwC6TzEUhphxhTNLysR24AwRjknJa98F5.jpg'),
 (4, 'test', 'test@gmail.com', NULL, '$2y$12$2dShxgA9EnG/DDNv8jLQYOuPKsG5HW7/BgbfEv7fK6CKq95f1oRKC', 'user', 'OXyGfUZjc7dqQvnvzJiyysmwCeGLYVkuGfNAdlmMD6iiJ2XZllkfS3a3KgyA', '2026-02-09 03:47:19', '2026-02-09 03:47:19', 'avatars/RgoupbWF3A8bL6LYTvnFQWShQivuzm8ZYjzI7UHo.webp'),
@@ -320,16 +302,10 @@ CREATE TABLE `votes` (
 --
 
 INSERT INTO `votes` (`id`, `user_id`, `argument_id`, `type`, `created_at`, `updated_at`) VALUES
-(4, 1, 5, 'disagree', '2026-02-05 00:50:33', '2026-02-05 00:50:37'),
-(5, 1, 10, 'agree', '2026-02-05 05:10:18', '2026-02-05 05:10:18'),
-(6, 1, 9, 'agree', '2026-02-07 00:17:16', '2026-02-07 00:17:16'),
-(8, 5, 26, 'agree', '2026-02-14 00:10:47', '2026-02-14 00:10:47'),
-(9, 1, 23, 'agree', '2026-02-14 00:11:17', '2026-02-14 00:11:17'),
-(10, 1, 21, 'agree', '2026-02-14 00:11:30', '2026-02-14 00:11:30'),
-(13, 1, 22, 'agree', '2026-02-14 00:46:45', '2026-02-14 00:46:45'),
-(14, 1, 25, 'agree', '2026-02-14 00:46:57', '2026-02-14 00:46:57'),
-(16, 1, 26, 'disagree', '2026-02-14 00:53:44', '2026-02-14 00:53:44'),
-(17, 1, 29, 'disagree', '2026-02-14 01:00:06', '2026-02-14 01:00:06');
+(21, 1, 42, 'agree', '2026-03-03 00:14:57', '2026-03-03 00:14:57'),
+(23, 1, 41, 'agree', '2026-03-03 00:15:01', '2026-03-03 00:15:01'),
+(25, 1, 40, 'agree', '2026-03-03 00:15:05', '2026-03-03 00:15:05'),
+(26, 1, 39, 'agree', '2026-03-03 00:20:31', '2026-03-03 00:20:31');
 
 --
 -- Indexes for dumped tables
@@ -435,7 +411,7 @@ ALTER TABLE `votes`
 -- AUTO_INCREMENT for table `arguments`
 --
 ALTER TABLE `arguments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `debates`
@@ -477,7 +453,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `votes`
 --
 ALTER TABLE `votes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Constraints for dumped tables
